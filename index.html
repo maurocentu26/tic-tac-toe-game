@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/styles.css">
+   <title>Ta-te-tí</title>
+</head>
+<body>
+   <main class="main flex">
+      <section class="main__screen flex current">
+         <div class="logo flex">
+            <span class="logo__1">
+               Ta
+            </span>
+            <span class="logo__2">
+               Te
+            </span>
+            <span class="logo__3">
+               Ti
+            </span>
+         </div>
+         <div class="buttons__container flex">
+            <button class="play__with__friend button">Play with a friend</button>
+            <button class="play__with__computer button">Play with the computer</button>
+            <!-- <button class="rules button">Rules</button> -->
+         </div>
+      </section>
+      <section class="select flex noshow">
+         <h2 class="select__title">Select <span class="control">X</span> or <span class="control">O</span></h2>
+         <div class="select__control flex">
+            <button class="select__option" data-control="X">X</button>
+            <button class="select__option" data-control="O">O</button>
+         </div>
+         <div class="select__cards flex">
+            <div class="card player-1">
+               <div class="card__top">
+                  <h2 class="card__title">Player 1</h2>
+               </div>
+               <div class="card__content flex">
+                  <span class="card__select" id="select-player1">...</span>
+               </div>
+            </div>
+            <div class="card player-2">
+               <div class="card__top">
+                  <h2 class="card__title">Player 2</h2>
+               </div>
+               <div class="card__content flex">
+                  <span class="card__select" id="select-player2">...</span>
+               </div>
+            </div>
+         </div>
+         <button class="select__confirm noshow">Confirm</button>
+      </section>
+      <section class="main-game flex noshow">
+         <div class="game__winner flex noshow">
+            <h3 class="winner__title">WINNER: <span class="winner__operator">X</span></h3>
+            <span class="reset__counter">Restarting game: <span class="counter">3</span> seg</span>
+         </div>
+         <div class="game__tab flex">
+            <div class="tab__row tab__controllers flex">
+               <div class="tab__cell flex" id="turn"><span><span class="highlight">X</span> TURN</span></div>
+               <button class="reset__game">RESET</button>
+            </div>
+            <div class="tab__row flex game-row" data-row="0">
+               <div class="tab__cell flex game-cell" data-column="0"></div>
+               <div class="tab__cell flex game-cell" data-column="1"></div>
+               <div class="tab__cell flex game-cell" data-column="2"></div>
+            </div>
+            <div class="tab__row flex game-row" data-row="1">
+               <div class="tab__cell flex game-cell" data-column="0"></div>
+               <div class="tab__cell flex game-cell" data-column="1"></div>
+               <div class="tab__cell flex game-cell" data-column="2"></div>
+            </div>
+            <div class="tab__row flex game-row" data-row="2">
+               <div class="tab__cell flex game-cell" data-column="0"></div>
+               <div class="tab__cell flex game-cell" data-column="1"></div>
+               <div class="tab__cell flex game-cell" data-column="2"></div>
+            </div>
+            <div class="tab__row tab__controllers flex">
+               <div class="tab__cell flex counter player-1">
+                  <span class="counter__title">X Wins</span>
+                  <span class="counter">0</span>
+               </div>
+               <div class="tab__cell flex counter draws">
+                  <span class="counter__title">Draws</span>
+                  <span class="counter">0</span>
+               </div>
+               <div class="tab__cell flex counter player-2">
+                  <span class="counter__title">O Wins</span>
+                  <span class="counter">0</span>
+               </div>
+            </div>
+         </div>
+      </section>
+   </main>
+   <footer class="footer">
+      <p class="footer__paragraph">
+         Developed by <a href="https://github.com/maurocentu26" class="footer__link" target="_blank" title="Enlace a mi GitHub">Mauro Centurión.</a>
+      </p>
+   </footer>
+   <script src="js/game-controller.js"></script>
+   <script src="js/app.js"></script>
+</body>
+</html>
