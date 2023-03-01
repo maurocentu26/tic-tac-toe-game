@@ -262,10 +262,10 @@ span.highlight{
    color: var(--primary-color);
 }
 
-.tab__cell.player-1{
+.tab__cell.player-X{
    background: var(--four-color);
 }
-.tab__cell.player-2{
+.tab__cell.player-O{
    background: #fff;
 }
 .tab__cell.draws{
