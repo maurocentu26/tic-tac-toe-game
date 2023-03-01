@@ -4,6 +4,7 @@ const gameTurn = document.querySelector("#turn");
 const gameRows = document.querySelectorAll(".game-row");
 const gameWinner = document.querySelector(".game__winner");
 const restartGameButton = document.querySelector(".reset__game");
+const tabControllers = document.querySelector("#games__counter");
 
 restartGameButton.addEventListener("click", restartGame);
 
@@ -13,6 +14,9 @@ let player2 = '';
 let turn = '';
 let putValid = false;
 let cellsNotEmpty = 0;
+let xWins = 0;
+let oWins = 0;
+let draws = 0;
 
 let gameTabMat = [
    ['', '', ''],
@@ -96,10 +100,17 @@ function setWinner () {
    let c = 3;
    
    if (setHorizontal() || setVertical() || setDiagonal()){
+      const addWin = tabControllers.querySelector(`.player-${op}`).querySelector(".counter");
+
       winnerOp.innerText = op;
       gameWinner.classList.remove("noshow");
       counter.innerText = c;
       putValid = false;
+
+      xWins += (op === 'X' ? 1 : 0);
+      oWins += (op === 'O' ? 1 : 0);
+
+      addWin.innerText = (op === 'X' ? xWins : oWins);
       
       let intervalId = setInterval(() => {
          c--;
@@ -113,10 +124,16 @@ function setWinner () {
       }, 1000)
    }
    else if (cellsNotEmpty === 9) {
+      const addDraw = tabControllers.querySelector(".draws").querySelector(".counter");
+
       winnerTitle.innerText = "Draw";
       gameWinner.classList.remove("noshow");
       counter.innerText = c;
       putValid = false;
+
+      draws++;
+
+      addDraw.innerText = draws;
 
       let intervalId = setInterval(() => {
          c--;
